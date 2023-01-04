@@ -5,7 +5,7 @@
 
 #Usage:
 
-
+```
 using ElevateAI.SDK;
 
 
@@ -29,3 +29,4 @@ var puncTranscript = ElevateAISDK.GetInteractionPunctuatedTranscript(DelcareResp
 var wordByWordTranscript = ElevateAISDK.GetInteractionWordByWordTranscript(DelcareResponse.interactionIdentifier, token, baseUrl);
 var aiResults = ElevateAISDK.GetAIResults(DelcareResponse.interactionIdentifier, token, baseUrl);
 
+```
