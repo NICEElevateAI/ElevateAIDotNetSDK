@@ -10,7 +10,7 @@ Steps
 4. Check status every 30 seconds using Interaction ID
 5. Once status is 'processed' or an error status https://docs.elevateai.com/tutorials/check-the-processing-status
 6. Retrieve results (transcripts, ai results) https://docs.elevateai.com/tutorials/get-phrase-by-phrase-transcript 
-7.
+
 #Usage:
 
 ```
@@ -23,15 +23,17 @@ string langaugeTag = "en-us";
 string tModel = "highAccuracy";
 string localFilePath = @"\\my\localfile.wav";
 
+//step 1, step 2
 var DelcareResponse = ElevateAISDK.DeclareAudioInteraction(langaugeTag, "default", "highAccuracy", token, true, null, baseUrl);
 
+//step 3
 var uploadResponse =ElevateAISDK.UploadFile(DelcareResponse.interactionIdentifier, token, localFilePath, baseUrl)
 
-
-
+//step 4, step5
 //Loop over status until processed
 var status = ElevateAISDK.GetInteractionStatus(DelcareResponse.interactionIdentifier,token,baseUrl);
 
+//step 6
 //get results after file is processed 
 var puncTranscript = ElevateAISDK.GetInteractionPunctuatedTranscript(DelcareResponse.interactionIdentifier, token, baseUrl);
 var wordByWordTranscript = ElevateAISDK.GetInteractionWordByWordTranscript(DelcareResponse.interactionIdentifier, token, baseUrl);
