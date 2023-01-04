@@ -1,9 +1,10 @@
 # ElevateAI.SDK
-.Net core 6 SDK for ElevateAI
+#.Net core 6 SDK for ElevateAI
 
-Easy to use SDK for ElevateAI 
+#Easy to use SDK for ElevateAI 
 
-Usage:
+#Usage:
+
 
 using ElevateAI.SDK;
 
