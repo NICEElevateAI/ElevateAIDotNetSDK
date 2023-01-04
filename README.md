@@ -7,9 +7,8 @@ Steps
 1. Declare an interaction (give a url if you want us to download)  
 2. Store Interaction ID
 3. Upload a file if no url using Interaction ID
-4. Check status every 30 seconds using Interaction ID
-5. Once status is 'processed' or an error status https://docs.elevateai.com/tutorials/check-the-processing-status
-6. Retrieve results (transcripts, ai results) https://docs.elevateai.com/tutorials/get-phrase-by-phrase-transcript 
+4. Check status every 30 seconds using Interaction ID until status is 'processed' or an error status https://docs.elevateai.com/tutorials/check-the-processing-status
+5. Retrieve results (transcripts, ai results) https://docs.elevateai.com/tutorials/get-phrase-by-phrase-transcript 
 
 #Usage:
 
@@ -32,7 +31,7 @@ var DelcareResponse = ElevateAISDK.DeclareAudioInteraction(langaugeTag, vert, tr
 var uploadResponse = ElevateAISDK.UploadFile(DelcareResponse.InteractionIdentifier.Value.ToString(), token, localFilePath, baseUrl);
 
 
-//step 4, step5
+//step 4
 //Loop over status until processed
 InteractionStatusResponse status = null;
 while (true)
@@ -45,7 +44,7 @@ while (true)
     Thread.Sleep(30000);
 }
 
-//step 6
+//step 5
 //get results after file is processed 
 var puncTranscript = ElevateAISDK.GetInteractionPunctuatedTranscript(DelcareResponse.InteractionIdentifier.Value.ToString(), token, baseUrl);
 var wordByWordTranscript = ElevateAISDK.GetInteractionWordByWordTranscript(DelcareResponse.InteractionIdentifier.Value.ToString(), token, baseUrl);
