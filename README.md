@@ -15,39 +15,40 @@ Steps
 
 ```
 using ElevateAI.SDK;
-using System.Threading;
+using ElevateAI.SDK.Responces;
 
 
 string token = "my token guid";
 string baseUrl = @"https://api.elevateai.com/v1/";
 string langaugeTag = "en-us";
-string tModel = "highAccuracy";
+string vert = "default1";
+string transcriptionMode = "highAccuracy";
 string localFilePath = @"\\my\localfile.wav";
 
 //step 1, step 2
-var DelcareResponse = ElevateAISDK.DeclareAudioInteraction(langaugeTag, "default", "highAccuracy", token, true, null, baseUrl);
+var DelcareResponse = ElevateAISDK.DeclareAudioInteraction(langaugeTag, vert, transcriptionMode, token, true, null, baseUrl);
 
 //step 3
-var uploadResponse = ElevateAISDK.UploadFile(DelcareResponse.interactionIdentifier, token, localFilePath, baseUrl)
+var uploadResponse = ElevateAISDK.UploadFile(DelcareResponse.InteractionIdentifier.Value.ToString(), token, localFilePath, baseUrl);
 
 
 //step 4, step5
 //Loop over status until processed
-InteractionStatus status = null;
-while
+InteractionStatusResponse status = null;
+while (true)
 {
-   status = ElevateAISDK.GetInteractionStatus(DelcareResponse.interactionIdentifier,token,baseUrl);
-   if(status.status =="processed" ||  status.status =="fileUploadFailed" || status.status =="fileDownloadFailed" || status.status =="processingFailed")
-   {
-      break;
-   }
-   Thread.sleep(30000);
+    status = ElevateAISDK.GetInteractionStatus(DelcareResponse.InteractionIdentifier.Value.ToString(), token, baseUrl);
+    if (status.InteractionStatus.status == "processed" || status.InteractionStatus.status == "fileUploadFailed" || status.InteractionStatus.status == "fileDownloadFailed" || status.InteractionStatus.status == "processingFailed")
+    {
+        break;
+    }
+    Thread.Sleep(30000);
 }
 
 //step 6
 //get results after file is processed 
-var puncTranscript = ElevateAISDK.GetInteractionPunctuatedTranscript(DelcareResponse.interactionIdentifier, token, baseUrl);
-var wordByWordTranscript = ElevateAISDK.GetInteractionWordByWordTranscript(DelcareResponse.interactionIdentifier, token, baseUrl);
-var aiResults = ElevateAISDK.GetAIResults(DelcareResponse.interactionIdentifier, token, baseUrl);
+var puncTranscript = ElevateAISDK.GetInteractionPunctuatedTranscript(DelcareResponse.InteractionIdentifier.Value.ToString(), token, baseUrl);
+var wordByWordTranscript = ElevateAISDK.GetInteractionWordByWordTranscript(DelcareResponse.InteractionIdentifier.Value.ToString(), token, baseUrl);
+var aiResults = ElevateAISDK.GetAIResults(DelcareResponse.InteractionIdentifier.Value.ToString(), token, baseUrl);
 
 ```
