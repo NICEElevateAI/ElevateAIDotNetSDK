@@ -1,7 +1,7 @@
 # ElevateAI.SDK
 #.Net core 6 SDK for ElevateAI
 
-#Easy to use SDK for ElevateAI 
+ElevateAI - the most afforable, accurate Speech-to-text (ASR) API. Free to use for hundreds of hours of audio per month!
 
 Steps 
 1. Declare an interaction (give a url if you want us to download)  
