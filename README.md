@@ -15,6 +15,7 @@ Steps
 
 ```
 using ElevateAI.SDK;
+using System.Threading;
 
 
 string token = "my token guid";
@@ -27,11 +28,21 @@ string localFilePath = @"\\my\localfile.wav";
 var DelcareResponse = ElevateAISDK.DeclareAudioInteraction(langaugeTag, "default", "highAccuracy", token, true, null, baseUrl);
 
 //step 3
-var uploadResponse =ElevateAISDK.UploadFile(DelcareResponse.interactionIdentifier, token, localFilePath, baseUrl)
+var uploadResponse = ElevateAISDK.UploadFile(DelcareResponse.interactionIdentifier, token, localFilePath, baseUrl)
+
 
 //step 4, step5
 //Loop over status until processed
-var status = ElevateAISDK.GetInteractionStatus(DelcareResponse.interactionIdentifier,token,baseUrl);
+InteractionStatus status = null;
+while
+{
+   status = ElevateAISDK.GetInteractionStatus(DelcareResponse.interactionIdentifier,token,baseUrl);
+   if(status.status =="processed" ||  status.status =="fileUploadFailed" || status.status =="fileDownloadFailed" || status.status =="processingFailed")
+   {
+      break;
+   }
+   Thread.sleep(30000);
+}
 
 //step 6
 //get results after file is processed 
