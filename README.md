@@ -3,6 +3,14 @@
 
 #Easy to use SDK for ElevateAI 
 
+Steps 
+1. Declare an interaction (give a url if you want us to download)  
+2. Store Interaction ID
+3. Upload a file if no url using Interaction ID
+4. Check status every 30 seconds using Interaction ID
+5. Once status is 'processed' or an error status https://docs.elevateai.com/tutorials/check-the-processing-status
+6. Retrieve results (transcripts, ai results) https://docs.elevateai.com/tutorials/get-phrase-by-phrase-transcript 
+7.
 #Usage:
 
 ```
