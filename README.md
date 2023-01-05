@@ -40,8 +40,7 @@ while (true)
     if (status.InteractionStatus.status == "processed" || status.InteractionStatus.status == "fileUploadFailed" || status.InteractionStatus.status == "fileDownloadFailed" || status.InteractionStatus.status == "processingFailed")
     {
         break;
-    }
-    Thread.Sleep(30000);
+    } 
 }
 
 //step 5
