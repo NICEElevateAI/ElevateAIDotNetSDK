@@ -13,17 +13,12 @@ namespace ElevateAI.SDK.TranscriptResults
         public List<PhraseSegment> phraseSegments { get; set; }
     }
 
-    public class ParticipantTwo
+    public class Participant
     {
         public List<string> phrases { get; set; }
         public List<PhraseSegment> phraseSegments { get; set; }
     }
 
-    public class ParticipantOne
-    {
-        public List<string> phrases { get; set; }
-        public List<PhraseSegment> phraseSegments { get; set; }
-    }
     public class RedactionSegment
     {
         public int startTimeOffset { get; set; }
@@ -42,8 +37,8 @@ namespace ElevateAI.SDK.TranscriptResults
     public class TranscriptModel
     {
         public AllParticipants allParticipants { get; set; }
-        public ParticipantTwo participantTwo { get; set; }
-        public ParticipantTwo participantOne { get; set; }
+        public Participant participantTwo { get; set; }
+        public Participant participantOne { get; set; }
         public List<RedactionSegment> redactionSegments { get; set; }
     }
 

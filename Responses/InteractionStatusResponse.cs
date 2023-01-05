@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElevateAI.SDK.Responces
+namespace ElevateAI.SDK.Responses
 {
     public class InteractionStatusResponse
     {

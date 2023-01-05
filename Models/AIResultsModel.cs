@@ -33,23 +33,18 @@ namespace ElevateAI.SDK.AIResults
         public double quartile4 { get; set; }
     }
 
-    public class ParticipantOne
+    public class Participant
     {
         public List<EnlightenBundle> enlightenBundles { get; set; }
         public List<VoiceActivitySegment> voiceActivitySegments { get; set; }
     }
 
-    public class ParticipantTwo
-    {
-        public List<EnlightenBundle> enlightenBundles { get; set; }
-        public List<VoiceActivitySegment> voiceActivitySegments { get; set; }
-    }
 
     public class AIModel
     {
         public AllParticipants allParticipants { get; set; }
-        public ParticipantOne participantOne { get; set; }
-        public ParticipantTwo participantTwo { get; set; }
+        public Participant participantOne { get; set; }
+        public Participant participantTwo { get; set; }
     }
 
     public class VoiceActivitySegment
