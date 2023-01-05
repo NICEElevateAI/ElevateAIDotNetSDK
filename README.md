@@ -40,10 +40,11 @@ while (true)
     if (status.InteractionStatus.status == "processed" || status.InteractionStatus.status == "fileUploadFailed" || status.InteractionStatus.status == "fileDownloadFailed" || status.InteractionStatus.status == "processingFailed")
     {
         break;
-    } 
+    }
+    Thread.Sleep(30000);
 }
 
-//step 5
+//step 6
 //get results after file is processed 
 var puncTranscript = ElevateAISDK.GetInteractionPunctuatedTranscript(DelcareResponse.InteractionIdentifier.Value.ToString(), token, baseUrl);
 var wordByWordTranscript = ElevateAISDK.GetInteractionWordByWordTranscript(DelcareResponse.InteractionIdentifier.Value.ToString(), token, baseUrl);
