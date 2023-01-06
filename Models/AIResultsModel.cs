@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 namespace ElevateAI.SDK.AIResults
 {
  
-    public class AllParticipants
-    {
-        public List<EnlightenBundle> enlightenBundles { get; set; }
-        public List<VoiceActivitySegment> voiceActivitySegments { get; set; }
-    }
+
 
     public class EnlightenBundle
     {
@@ -42,7 +38,7 @@ namespace ElevateAI.SDK.AIResults
 
     public class AIModel
     {
-        public AllParticipants allParticipants { get; set; }
+        public Participant allParticipants { get; set; }
         public Participant participantOne { get; set; }
         public Participant participantTwo { get; set; }
     }

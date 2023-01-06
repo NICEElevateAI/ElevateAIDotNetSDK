@@ -7,11 +7,6 @@ using System.Threading.Tasks;
 namespace ElevateAI.SDK.TranscriptResults
 {
 
-    public class AllParticipants
-    {
-        public List<string> phrases { get; set; }
-        public List<PhraseSegment> phraseSegments { get; set; }
-    }
 
     public class Participant
     {
@@ -36,7 +31,7 @@ namespace ElevateAI.SDK.TranscriptResults
     }
     public class TranscriptModel
     {
-        public AllParticipants allParticipants { get; set; }
+        public Participant allParticipants { get; set; }
         public Participant participantTwo { get; set; }
         public Participant participantOne { get; set; }
         public List<RedactionSegment> redactionSegments { get; set; }
