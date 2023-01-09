@@ -20,7 +20,7 @@ using ElevateAI.SDK.Responces;
 string token = "my token guid";
 string baseUrl = @"https://api.elevateai.com/v1/";
 string langaugeTag = "en-us";
-string vert = "default1";
+string vert = "default";
 string transcriptionMode = "highAccuracy";
 string localFilePath = @"\\my\localfile.wav";
 
