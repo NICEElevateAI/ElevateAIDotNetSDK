@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElevateAI.SDK.PunctuatedTranscriptResult
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
     public class RedactionSegment
     {
         public int startTimeOffset { get; set; }
