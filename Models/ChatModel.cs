@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ElevateAI.SDK.ChatData
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+
     public class Message
     {
         public string participant_id { get; set; }
