@@ -12,7 +12,7 @@ Steps  - Pre Req: signup for a free account @ https://app.elevateai.com and retr
 
 #Usage:
 
-```
+```c#
 using ElevateAI.SDK;
 using ElevateAI.SDK.Responces;
 
