@@ -32,7 +32,7 @@
 
 ```c#
 using ElevateAI.SDK;
-using ElevateAI.SDK.Responces;
+using ElevateAI.SDK.Responses;
 
 
 string token = "API-TOKEN";
