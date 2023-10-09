@@ -23,7 +23,7 @@ namespace ElevateAI.SDK
         /// <param name="downloadURL">URL to fetch media files. Leave Null if uploading local file.</param>
         /// <param name="elevateAIBaseUrl">Base ElevateAI URL ex: https://api.elevateai.com/v1/</param>
         /// <returns>DeclareInteractionResponse (Contains the Interaction Identifier), see HttpResponseMessage for status code</returns>
-        public static async Task<DeclareInteractionResponse> DeclareAudioInteraction(string languageTag, string verticle, string transcriptionMode, string token, bool includeAIResults, Uri? downloadURL, string elevateAIBaseUrl)
+        public static async Task<DeclareInteractionResponse> DeclareAudioInteraction(string languageTag, string verticle, string transcriptionMode, string token, bool includeAIResults, Uri? downloadURL, string elevateAIBaseUrl, string? originalFilename, string? externalIdentifier)
         {
             var declareUrl = Helper.JoinUriSegments(elevateAIBaseUrl, "/interactions");
 
@@ -34,7 +34,9 @@ namespace ElevateAI.SDK
                 type = "audio",
                 includeAiResults = includeAIResults,
                 vertical = verticle,
-                downloadUri = downloadURL
+                downloadUri = downloadURL,
+		originalFilename = originalFilename,
+		externalIdentifier = externalIdentifier
             };
 
 

@@ -16,6 +16,8 @@ namespace ElevateAI.SDK
         public string audioTranscriptionMode { get; set; }
         public bool includeAiResults { get; set; }
         public Uri? downloadUri { get; set; }
+	public string? originalFilename {get; set;}
+	public string? externalIdentifier {get; set;}
         public TranscriptModel? transcript { get; set; }
         public ChatModel? chat { get; set; }
 
